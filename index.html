@@ -60,7 +60,11 @@
   <!-- main -->
   <main id="root">
 
-    <div class="">{{beMail}}</div>
+    <div class="">
+      <ul v-for="(item, index) in mailList" :key="index">
+        <li>{{item}}</li>
+      </ul>
+    </div>
 
   </main>
   <!-- /main -->
