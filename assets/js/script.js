@@ -3,16 +3,15 @@ let app = new Vue({
     data: {
         mailList: [],
         beMail: "",
+        number: "",
+        arrayNumbers: [],
+        color: "",
     },
     
     methods: {
 
-        addMailList: function (){
-
-            
-
-        }
-        
+     
+      
     },
 
     mounted() {
@@ -28,11 +27,17 @@ let app = new Vue({
             this.mailList.push(this.beMail);
             console.log(this.mailList);
         });}
+    
        
+        
     },
 })
 
 
 
-// TODO  1//Genera 10 mail tramite api e stampale in una lista,La lista di email va stampata a schermo nella pagina html.
+// TODO  1//Genera 10 mail tramite api e stampale in una lista,2//La lista di email va stampata a schermo nella pagina html.
             
+// TODO BONUS (facoltativo):
+// TODO 1/Generate una Griglia 6x6, ad ogni click parte una richiesta AJAX che prende un numero random da 1 a 9.
+// TODO 2/Se è <= 5 il quadrato diventa giallo, se è > di 5 il quadrato diventa verde.
+// TODO 3/Il numero ottenuto appare al centro del quadrato
