@@ -71,8 +71,8 @@
 
 
     <div class="square flex">
-     <div v-for="(item, index) in arrayNumbers" :key="index" class="square_mini flex"  v-bind:class="color" @click='check(index)'>
-       {{arrayNumbers[index]}}
+     <div v-for="(item, index) in arrayNumbers" :key="index" class="square_mini flex"  v-bind:class="arrayNumbers[index].color" @click='check(index)'>
+       {{arrayNumbers[index].value}}
      </div>
      
       <div>

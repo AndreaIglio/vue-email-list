@@ -3,7 +3,6 @@ let app = new Vue({
   data: {
     mailList: [],
     beMail: "",
-    number: {},
     arrayNumbers: [],
     color: "",
   },
@@ -12,14 +11,21 @@ let app = new Vue({
     check: function (index) {
       
 
-        if(this.arrayNumbers[index] <= 5){
-            this.color = 'yellow';
+
+        if(this.arrayNumbers[index].value <= 5){
+          this.arrayNumbers[index].color = 'yellow';
+        console.log(this.arrayNumbers[index].color);
+        console.log(this.arrayNumbers[index]);
+
         }
-        if(this.arrayNumbers[index] > 5){
-            this.color = 'green';
-        }
+        else if(this.arrayNumbers[index].value > 5){
+          this.arrayNumbers[index].color = 'green';
+        console.log(this.arrayNumbers[index].color);
+        console.log(this.arrayNumbers[index]);
 
 
+        }
+      
 
     },
   },
@@ -27,14 +33,18 @@ let app = new Vue({
   mounted() {
     for(let i =0 ; i < 16; i++){
     axios.get("https://flynn.boolean.careers/exercises/api/random/int").then(response =>{
-        // console.log(response);
+ 
         // console.log(response.data.response);
-        this.number = response.data.response;
-        // console.log(newMail);
-        console.log(this.beMail);
-        this.arrayNumbers.push(this.number);
-        // console.log(this.arrayNumbers);
+        let number = {};
+        number.value = response.data.response;
+        number.color = '';
+        // console.log(number.value);
+        this.arrayNumbers.push(number);
+
+        
+       
     });}
+    // console.log(this.arrayNumbers);
   },
 });
 
